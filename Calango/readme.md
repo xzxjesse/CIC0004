@@ -1,4 +1,4 @@
-**Readme.md - Boleto de Condomínio em Calango**
+# Boleto de Condomínio em Calango
 
 **Síntese:**
 O algoritmo "BoletoCondominio" foi desenvolvido com o objetivo de calcular a taxa de condomínio com base no bloco do apartamento e no mês de referência. Este programa foi implementado nas linguagens Calango, proporcionando uma solução eficaz para o cálculo do valor do boleto de condomínio.
