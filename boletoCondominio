@@ -1,0 +1,247 @@
+algoritmo boletoCondominio;
+//  Síntese
+//  Objetivo: calcular a taxa de condomínio de acordo com o bloco onde o apartamento se encontra e com o mês de interesse
+//  Entrada: identificação do apartamento e mês
+//  Saída: taxa de condominio
+
+
+principal
+	//declarações
+
+	inteiro id, mes, i, conf;
+	inteiro a[10], b[10], c[10], d[10], f[10]; //blocos
+	texto nomemes, taxa, bloco, vencimento;
+
+
+	//pag inicial
+
+	escreval("Boleto_Condominio.com");
+	escreval("");
+
+	//ler variaveis
+
+	escreva("número do apartamento: ");
+	leia(id);
+
+	escreva("mês de referência: ");
+	leia(mes);
+
+	//confirmar dados
+
+	//id e bloco
+
+
+	se (id>=1 e id<=10) entao
+		a[(id-1)]=id;
+		bloco="aa";
+		taxa="aa";
+	senao
+		se (id>=11 e id<=20) entao
+			b[(id-11)]=id;
+			bloco="bb";
+			taxa="bb";
+		senao
+			se (id>=21 e id<=30) entao
+				c[(id-21)]=id;
+				bloco="cc";
+				taxa="cc";
+			senao
+				se (id>=31 e id<=40) entao
+					d[(id-31)]=id;
+					bloco="dd";
+					taxa="dd";
+				senao
+					se (id>=41 e id<=50) entao
+						f[(id-41)]=id;
+						bloco="ff";
+						taxa="ff";
+					senao
+						escreval ("APARTAMENTO INEXISTENTE!");
+					fimSe
+				fimSe
+			fimSe
+		fimSe
+	fimSe
+
+
+	//mes
+
+	se (mes==1) entao
+		nomemes="janeiro";
+	senao
+		se (mes==2) entao
+			nomemes="fevereiro";
+		senao
+			se (mes==3) entao
+				nomemes="marco";
+			senao
+				se (mes==4) entao
+					nomemes="abril";
+				senao
+					se (mes==5) entao
+						nomemes="maio";
+					senao
+						se (mes==6) entao
+							nomemes="junho";
+						senao
+							se (mes==7) entao
+								nomemes="julho";
+							senao
+								se (mes==8) entao
+									nomemes="agosto";
+								senao
+									se (mes==9) entao
+										nomemes="setembro";
+									senao
+										se (mes==10) entao
+											nomemes="outubro";
+										senao
+											se (mes==11) entao
+												nomemes="novembro";
+											senao
+												se (mes==12) entao
+													nomemes="dezembro";
+												senao
+													escreval("MÊS INEXISTENTE!");
+												fimSe
+											fimSe
+										fimSe
+									fimSe
+								fimSe
+							fimSe
+						fimSe
+					fimSe
+				fimSe
+			fimSe
+		fimSe
+	fimSe
+
+	//vencimento
+
+	escolha (mes)
+	caso 12
+		vencimento="janeiro";
+		interrompa;
+	caso 1
+		vencimento="fevereiro";
+		interrompa;
+	caso 2
+		vencimento="marco";
+		interrompa;
+	caso 3
+		vencimento="abril";
+		interrompa;
+	caso 4
+		vencimento="maio";
+		interrompa;
+	caso 5
+		vencimento="junho";
+		interrompa;
+	caso 6
+		vencimento="julho";
+		interrompa;
+	caso 7
+		vencimento="agosto";
+		interrompa;
+	caso 8
+		vencimento="setembro";
+		interrompa;
+	caso 9
+		vencimento="outubro";
+		interrompa;
+	caso 10
+		vencimento="novembro";
+		interrompa;
+	caso 11
+		vencimento="dezembro";
+		interrompa;
+	fimEscolha
+
+	limpaTela();
+
+	//boleto
+
+	escreval("BANCO CONDOMINIO BRASIL|+55|061");
+	escreval("");
+	escreval("564.45512.1.215.4646.5874.31505");
+	escreval("");
+	escreval("MÊS: ", nomemes);
+	escreval("APARTAMENTO: ", id);
+	escreval("BLOCO: ", caracterTexto(bloco,1));
+	escreval("");
+	escreval("VENCIMENTO DO BOLETO: ", vencimento);
+	escreval("");
+	escreval("VALOR DO BOLETO: ", (valorBoleto(nomemes, taxa, bloco)));
+	escreval("");
+	escreval("|| ||||| |||||||| ||||| || |||| ");
+
+fimPrincipal
+
+//calculo do valor do boleto de acordo com o bloco e com o mes
+
+funcao inteiro valorBoleto (texto nomemes, texto taxa, texto bloco)
+	texto aa,bb,cc,dd,ff;
+	texto janeiro, fevereiro, dezembro, junho, julho, outubro;
+	inteiro valorFixo, valorFinal1, valorFinal2;
+
+	valorFixo=500;
+	
+	aa = "aa";
+	bb = "bb";
+	cc = "cc";
+	dd = "dd";
+	ff = "ff";
+	
+	janeiro = "janeiro";
+	fevereiro = "fevereiro";
+	dezembro = "dezembro";
+	junho = "junho";
+	julho = "julho";
+	outubro = "outubro";
+
+	//acrescimo por bloco
+	se (comparaTexto (taxa,aa) == 0) entao
+		valorFinal1= valorFixo*1.10;
+	senao
+		se (comparaTexto (taxa,bb)== 0) entao
+			valorFinal1= valorFixo*1.15;
+		senao
+			se (comparaTexto (taxa,cc)== 0) entao
+				valorFinal1= valorFixo*1.20;
+			senao
+				se (comparaTexto (taxa,dd)== 0) entao
+					valorFinal1= valorFixo*1.25;
+				senao
+					se (comparaTexto (taxa,ff)== 0) entao
+						valorFinal1= valorFixo*1.30;
+					fimSe
+				fimSe
+			fimSe
+		fimSe
+	fimSe
+
+	//acrescimo por mes
+	se (comparaTexto (nomemes,janeiro)== 0 ou comparaTexto(nomemes,dezembro)== 0) entao
+		valorFinal2= valorFinal1 + 50;
+		//eventos e decoração final de ano
+	senao
+		se (comparaTexto (nomemes,fevereiro) == 0) entao
+			valorFinal2 = valorFinal1 + 40;
+			//eventos e decoração carnaval
+		senao
+			se (comparaTexto (nomemes,junho)== 0 ou comparaTexto(nomemes,julho)== 0) entao
+				valorFinal2= valorFinal1 + 30;
+				//eventos e decoração juninos
+			senao
+				se (comparaTexto (nomemes,outubro)== 0) entao
+					valorFinal2= valorFinal1 + 15;
+					//eventos e decoração halloween
+				senao
+					valorFinal2 = valorFinal1;
+				fimSe
+			fimSe
+		fimSe
+	fimSe
+
+	retorna (valorFinal2);
+fimFuncao
