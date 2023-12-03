@@ -1,5 +1,5 @@
 # Algoritmos e Programação de Computadores - CIC0004
-Este repositório contém materiais relacionados ao curso de Algoritmos e Programação de Computadores.
+Este repositório contém materiais relacionados ao curso de Algoritmos e Programação de Computadores, que abrange os princípios fundamentais relacionados à construção de programas de computador. Ao longo do curso, foram explorados os conceitos essenciais de programação, desde a construção de algoritmos até a implementação prática de soluções em linguagens como Calango e C.
 
 ## Informações Gerais
 
