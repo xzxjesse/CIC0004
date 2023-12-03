@@ -8,10 +8,6 @@ Este repositório contém materiais relacionados ao curso de Algoritmos e Progra
 - **Período Letivo:** 2022/1
 - **Modalidade:** Presencial
 
-## Aulas
-
-As aulas são realizadas presencialmente.
-
 ### Ementa
 
 - **Princípios fundamentais de construção de programas:**
