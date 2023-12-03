@@ -1,11 +1,16 @@
 # Algoritmos e Programação de Computadores - CIC0004
-Este repositório contém materiais relacionados ao curso de Algoritmos e Programação de Computadores ministrado pelo professor Giovanni na Universidade de Brasília (UnB), Faculdade do Gama (FGA), durante o semestre de 1.2023.
+Este repositório contém materiais relacionados ao curso de Algoritmos e Programação de Computadores.
 
-### Código
-CIC0004
+## Informações Gerais
 
-### Nome
-Algoritmos e Programação de Computadores
+- **Universidade:** Universidade de Brasília (UnB)
+- **Faculdade:** Faculdade do Gama (FGA)
+- **Período Letivo:** 2022/1
+- **Modalidade:** Presencial
+
+## Aulas
+
+As aulas são realizadas presencialmente.
 
 ### Ementa
 
